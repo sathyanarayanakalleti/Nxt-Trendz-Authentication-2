@@ -4,8 +4,8 @@ import Cookies from 'js-cookie'
 import './index.css'
 
 const Header = props => {
-  const onClickLogOut = () => {
-    const {history} = props
+  const {history} = props
+  const onLogpot = () => {
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
@@ -20,7 +20,7 @@ const Header = props => {
             alt="website logo"
           />
 
-          <button type="button" className="nav-mobile-btn">
+          <button type="button" className="nav-mobile-btn" onClick={onLogpot}>
             <img
               src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
               alt="nav logout"
@@ -49,7 +49,7 @@ const Header = props => {
           <button
             type="button"
             className="logout-desktop-btn"
-            onClick={onClickLogOut}
+            onClick={onLogpot}
           >
             Logout
           </button>
